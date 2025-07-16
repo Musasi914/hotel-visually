@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hotel Visually
 
-## Getting Started
+awaaads で画像をうまく使って思わず行きたくなるようなサイトを 2 つ見つけたので、それを参考にして作ってみる。
+あと、半年ぶりに Next.js を使ってみる。
 
-First, run the development server:
+## 📋 概要
+
+このプロジェクトは、Next.js、TypeScript、Tailwind CSS を使用して構築されたホテル関連の Web アプリケーションです。
+
+## 🚀 技術スタック
+
+- **フレームワーク**: Next.js 15.4.1
+- **言語**: TypeScript
+- **スタイリング**: Tailwind CSS 4
+- **React**: 19.1.0
+- **開発ツール**: Turbopack
+
+## 📦 インストール
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 依存関係をインストール
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ 開発
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# 開発サーバーを起動
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+開発サーバーは [http://localhost:3000](http://localhost:3000) で起動します。
 
-## Learn More
+## 🏗️ ビルド
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# プロダクションビルド
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# プロダクションサーバーを起動
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔍 リント
 
-## Deploy on Vercel
+```bash
+# コードの品質チェック
+npm run lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 プロジェクト構造
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+hotel-visually/
+├── public/          # 静的ファイル
+├── src/
+│   └── app/        # Next.js App Router
+│       ├── layout.tsx
+│       ├── page.tsx
+│       └── globals.css
+├── package.json
+├── next.config.ts
+├── tsconfig.json
+└── tailwind.config.js
+```
+
+## 🎨 カスタマイズ
+
+### スタイリング
+
+- Tailwind CSS を使用してスタイリングを行っています
+- `src/app/globals.css`でグローバルスタイルを定義
+
+### コンポーネント
+
+- `src/app/page.tsx`でメインページを実装
+- 必要に応じて`src/components/`ディレクトリを作成してコンポーネントを整理
+
+## 🌐 デプロイ
+
+このプロジェクトは以下のプラットフォームでデプロイできます：
+
+- **Vercel**: 推奨（Next.js の開発元）
+- **Netlify**
+- **AWS Amplify**
+- **その他の VPS/ホスティングサービス**
+
+## 🤝 コントリビューション
+
+1. このリポジトリをフォーク
+2. 機能ブランチを作成 (`git checkout -b feature/amazing-feature`)
+3. 変更をコミット (`git commit -m 'Add some amazing feature'`)
+4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
+5. プルリクエストを作成
