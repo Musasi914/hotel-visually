@@ -1,11 +1,19 @@
 # Hotel Visually
 
-awaaads で画像をうまく使って思わず行きたくなるようなサイトを 2 つ見つけたので、それを参考にして作ってみる。
+awaaads で画像をうまく使って思わず行きたくなるようなサイトを見つけたので、それを参考にして作ってみる。
+
+- https://capsules.moyra.co/
+- https://fame-estate.com/
+
 あと、半年ぶりに Next.js を使ってみる。
 
 ## 📋 概要
 
 このプロジェクトは、Next.js、TypeScript、Tailwind CSS を使用して構築されたホテル関連の Web アプリケーションです。
+
+## 📝 学び
+
+- 文字を定数に登録する
 
 ## 🚀 技術スタック
 
@@ -75,20 +83,3 @@ hotel-visually/
 
 - `src/app/page.tsx`でメインページを実装
 - 必要に応じて`src/components/`ディレクトリを作成してコンポーネントを整理
-
-## 🌐 デプロイ
-
-このプロジェクトは以下のプラットフォームでデプロイできます：
-
-- **Vercel**: 推奨（Next.js の開発元）
-- **Netlify**
-- **AWS Amplify**
-- **その他の VPS/ホスティングサービス**
-
-## 🤝 コントリビューション
-
-1. このリポジトリをフォーク
-2. 機能ブランチを作成 (`git checkout -b feature/amazing-feature`)
-3. 変更をコミット (`git commit -m 'Add some amazing feature'`)
-4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
-5. プルリクエストを作成
