@@ -35,13 +35,13 @@ export default function OurCases() {
   const isMobile = useIsMobile();
   useGSAP(() => {
     if (isMobile) return;
-    gsap.set(".js-hotel-item", { y: `${window.innerHeight}px` });
+    gsap.set(".js-hotel-item", { opacity: 0, y: `${window.innerHeight}px` });
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".js-our-cases",
         start: "top top",
         end: "bottom top",
-        scrub: true,
+        scrub: 2,
       },
     });
     tl.to({}, { duration: 0.3 });
@@ -56,6 +56,7 @@ export default function OurCases() {
           yPercent: -100,
         }),
         gsap.to(".js-hotel-item", {
+          opacity: 1,
           y: 0,
           stagger: 0.1,
           ease: "power2.inOut",

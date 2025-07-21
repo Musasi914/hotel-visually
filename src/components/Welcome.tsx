@@ -22,7 +22,7 @@ export default function Welcome({ title, sectionName }: { title: string; section
         trigger: `.js-${sectionName}-title`,
         start: "top 80%",
         end: "top 40%",
-        scrub: true,
+        scrub: 2,
       },
     });
   }, [`.js-${sectionName}`]);

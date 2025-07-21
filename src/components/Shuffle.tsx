@@ -22,6 +22,7 @@ export default function Shuffle() {
 
   useGSAP(() => {
     if (isMobile) return;
+    if (window.matchMedia("(hover: none)").matches) return;
     // initSplitText
     const textEl = gsap.utils.toArray(splitTextRef.current?.querySelectorAll("h3, p") || []);
 
@@ -109,7 +110,7 @@ export default function Shuffle() {
 
     const observer = ScrollTrigger.observe({
       target: shuffleRef.current,
-      type: "wheel",
+      type: "wheel,touch,scroll,pointer",
       preventDefault: true,
       onUp: () => {
         if (currentPage === 0) return;
@@ -134,7 +135,8 @@ export default function Shuffle() {
           start();
         }
       },
-      onDown: () => {
+      onDown: (aaaa) => {
+        console.log(aaaa);
         if (isAnimating) return;
         if (currentPage === 3) return;
         stop();
