@@ -166,6 +166,7 @@ export default function Shuffle() {
       end: () => `+=${window.innerHeight}`,
       pin: true,
       pinSpacing: true,
+      anticipatePin: 1,
       onEnter: () => {
         observer.enable();
       },
