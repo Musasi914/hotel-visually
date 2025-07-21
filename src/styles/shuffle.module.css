@@ -1,0 +1,141 @@
+.shuffle {
+  height: 100vh;
+  font-weight: bold;
+
+  @media (width <= 48rem) {
+    height: auto;
+  }
+}
+
+.shuffle__wrapper {
+  position: relative;
+  height: 98%;
+  width: 98%;
+  margin: 1%;
+  overflow: hidden;
+
+  @media (width <= 48rem) {
+    height: auto;
+    width: 100%;
+    margin: 0;
+    overflow: initial;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.shuffle h3 {
+  font-size: 2rem;
+
+  @media (width <= 48rem) {
+    line-height: 1;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.shuffle p {
+  font-size: 0.75rem;
+}
+
+.shuffle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.col {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  color: #b1a696;
+  background-color: #312e2a;
+  overflow: hidden;
+  border-radius: 3rem;
+  will-change: transform;
+
+  &:nth-child(2) {
+    transform: translateX(100%);
+  }
+
+  &:nth-child(3) {
+    transform: translate(100%, 100%);
+  }
+
+  &:nth-child(4) {
+    transform: translate(100%, 100%);
+  }
+
+  @media (width <= 48rem) {
+    position: relative;
+    width: 94%;
+    overflow: initial;
+    order: 2;
+    border-radius: 0 0 1rem 1rem;
+    margin-inline: auto;
+
+    &:nth-child(2) {
+      order: 1;
+      transform: none;
+      border-radius: 1rem 1rem 0 0;
+      overflow: hidden;
+    }
+
+    &:nth-child(3) {
+      order: 4;
+      transform: none;
+      border-radius: 0 0 1rem 1rem;
+    }
+
+    &:nth-child(4) {
+      margin-top: 3rem;
+
+      order: 3;
+      transform: none;
+      border-radius: 1rem 1rem 0 0;
+      overflow: hidden;
+    }
+  }
+}
+
+.col__img,
+.col__img_wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.col__content,
+.col__img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.col__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem;
+
+  @media (width <= 48rem) {
+    padding: 1rem;
+  }
+  &:nth-child(2) {
+    @media (width <= 48rem) {
+      display: none;
+    }
+  }
+}
+
+.col__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+
+  @media (width <= 48rem) {
+    position: relative;
+  }
+}

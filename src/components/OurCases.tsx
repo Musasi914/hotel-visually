@@ -75,15 +75,15 @@ export default function OurCases() {
           <p className="md:abs-center p-2 md:p-0 overflow-hidden font-bold text-2xl md:text-4xl leading-relaxed">
             {OUR_CASES_TEXT.map((text, index) => (
               <span className="overflow-hidden block" key={index}>
-                <span className="js-our-cases-text block">{text}</span>
+                <span className="js-our-cases-text block text-nowrap">{text}</span>
               </span>
             ))}
           </p>
           <div className="h-full p-2">
-            <ol className="h-full p-2 flex flex-wrap  md:grid grid-cols-12 gap-[8vw] grid-rows-[auto_1fr_auto]">
+            <ol className="h-full p-2 flex flex-wrap  md:grid grid-cols-12 gap-x-[8vw] grid-rows-[auto_1fr_auto]">
               {hotelList.map((hotel: Hotel) => (
                 <li key={hotel.id} className={getHotelItemClass(hotel)}>
-                  <p className="flex items-center gap-4 text-sm justify-center font-mono">
+                  <p className="flex items-center gap-4 text-sm justify-center font-mono font-bold">
                     <span>{`00${hotel.id}`}</span>
                     <span>{hotel.title}</span>
                   </p>

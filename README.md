@@ -15,6 +15,8 @@ awaaads で画像をうまく使って思わず行きたくなるようなサイ
 
 - 文字を定数に登録する
 
+- shuffle コンポーネントにて ScrollTrigger.observe でスクロール量関係なくアニメーション終わるまでスクロールをストップ
+
 ## 🚀 技術スタック
 
 - **フレームワーク**: Next.js 15.4.1
@@ -49,35 +51,13 @@ npm run build
 npm start
 ```
 
-## 🔍 リント
-
-```bash
-# コードの品質チェック
-npm run lint
-```
-
-## 📁 プロジェクト構造
-
-```
-hotel-visually/
-├── public/          # 静的ファイル
-├── src/
-│   └── app/        # Next.js App Router
-│       ├── layout.tsx
-│       ├── page.tsx
-│       └── globals.css
-├── package.json
-├── next.config.ts
-├── tsconfig.json
-└── tailwind.config.js
-```
-
 ## 🎨 カスタマイズ
 
 ### スタイリング
 
 - Tailwind CSS を使用してスタイリングを行っています
 - `src/app/globals.css`でグローバルスタイルを定義
+- shuffle コンポーネントでは css module を使っています
 
 ### コンポーネント
 

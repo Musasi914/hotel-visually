@@ -1,25 +1,41 @@
 "use client";
 
-import { ReactLenis } from "lenis/react";
-import { useEffect, useRef } from "react";
+import { ReactLenis, type LenisRef } from "lenis/react";
+import { useEffect, useRef, createContext, useContext } from "react";
 import gsap from "gsap";
 
+const LenisContext = createContext<{ stop: () => void; start: () => void } | null>(null);
+
+export function useLenis() {
+  const context = useContext(LenisContext);
+  if (!context) {
+    throw new Error("useLenis must be used within a LenisProvider");
+  }
+  return context;
+}
+
 export default function LenisProvider({ children }: { children: React.ReactNode }) {
-  const lenisRef = useRef(null);
+  const lenisRef = useRef<LenisRef | null>(null);
+
   useEffect(() => {
     function update(time: number) {
-      // lenisRef.current の型を明示し、lenis プロパティへの型エラーを回避
-      const lenisInstance = lenisRef.current as { lenis?: { raf: (t: number) => void } } | null;
-      lenisInstance?.lenis?.raf(time * 1000);
+      // lenisRef.current?.lenis?.raf を呼び出す
+      lenisRef.current?.lenis?.raf(time * 1000);
     }
 
     gsap.ticker.add(update);
 
     return () => gsap.ticker.remove(update);
   }, []);
+
+  const stop = () => lenisRef.current?.lenis?.stop();
+  const start = () => lenisRef.current?.lenis?.start();
+
   return (
-    <ReactLenis root ref={lenisRef}>
-      {children}
-    </ReactLenis>
+    <LenisContext.Provider value={{ stop, start }}>
+      <ReactLenis root ref={lenisRef} options={{ duration: 2 }}>
+        {children}
+      </ReactLenis>
+    </LenisContext.Provider>
   );
 }

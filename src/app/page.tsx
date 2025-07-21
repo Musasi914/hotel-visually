@@ -3,6 +3,8 @@ import Hero from "@/components/Hero";
 import OurCases from "@/components/OurCases";
 import Welcome from "@/components/Welcome";
 import LenisProvider from "@/provider/LenisProvider";
+import Cushion from "@/components/Cushion";
+import Shuffle from "@/components/Shuffle";
 
 export default function Home() {
   return (
@@ -10,9 +12,11 @@ export default function Home() {
       <main>
         <Hero />
         <OurCases />
-        <Welcome />
+        <Welcome title="What you see is what you get." sectionName="welcome" />
         <Gallery />
-        <section className="h-screen"></section>
+        <Cushion />
+        <Shuffle />
+        <Welcome title="Reserve your room" sectionName="reserve" />
       </main>
     </LenisProvider>
   );
